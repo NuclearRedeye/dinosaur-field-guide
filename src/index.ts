@@ -1,5 +1,3 @@
-import { createTextElement } from './utils/utils.js';
-
 interface Experiment {
   id: number;
   name: string;
@@ -10,17 +8,16 @@ interface Experiment {
 const experiments: Experiment[] = [
   {
     id: 501,
-    name: "How does a T-Rex defend their nest?",
-    backgroundImage: "assets/dino-experiment-501.trex-nest.jpg",
+    name: 'How does a T-Rex defend their nest?',
+    backgroundImage: 'assets/dino-experiment-501.trex-nest.jpg',
     completed: false
   }
-]
+];
 
 function getExperiment(id: number): Experiment | undefined {
   let retVal;
-  for (let experiment of experiments) {
-    if (experiment.id === id)
-    {
+  for (const experiment of experiments) {
+    if (experiment.id === id) {
       retVal = experiment;
       break;
     }
@@ -45,6 +42,6 @@ function renderExperiment(experiment: Experiment): DocumentFragment {
   return retVal;
 }
 
-window.onload = function(): void {
+window.onload = function (): void {
   document.body.appendChild(renderExperiment(getExperiment(501) as Experiment));
 };
