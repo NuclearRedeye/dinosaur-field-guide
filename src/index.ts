@@ -15,10 +15,10 @@ const experiments: Experiment[] = [
 ];
 
 function getExperiment(id: number): Experiment | undefined {
-  let retVal;
-  for (const experiment of experiments) {
-    if (experiment.id === id) {
-      retVal = experiment;
+  var retVal;
+  for (var i = 0; i < experiments.length; i++) {
+    if (experiments[i].id === id) {
+      retVal = experiments[i];
       break;
     }
   }
@@ -26,18 +26,18 @@ function getExperiment(id: number): Experiment | undefined {
 }
 
 function renderExperiment(experiment: Experiment): DocumentFragment {
-  const retVal = document.createDocumentFragment();
-  const background = document.createElement('img') as HTMLImageElement;
+  var retVal = document.createDocumentFragment();
+  var background = document.createElement('img') as HTMLImageElement;
   background.src = experiment.backgroundImage;
   background.width = 1280;
   background.height = 720;
   retVal.appendChild(background);
 
-  const id = document.createElement('h2');
+  var id = document.createElement('h2');
   id.innerHTML = `Dino Experiment ${experiment.id}`;
   retVal.appendChild(id);
 
-  const title = document.createElement('h1');
+  var title = document.createElement('h1');
   title.innerHTML = experiment.name;
   retVal.appendChild(title);
 
