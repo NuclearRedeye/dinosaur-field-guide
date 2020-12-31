@@ -27,8 +27,10 @@ function getExperiment(id: number): Experiment | undefined {
 
 function renderExperiment(experiment: Experiment): DocumentFragment {
   const retVal = document.createDocumentFragment();
-  const background = document.createElement('img');
+  const background = document.createElement('img') as HTMLImageElement;
   background.src = experiment.backgroundImage;
+  background.width = 1280;
+  background.height = 720;
   retVal.appendChild(background);
 
   const id = document.createElement('h2');
