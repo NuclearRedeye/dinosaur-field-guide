@@ -2,5 +2,9 @@
   "extends": "@nuclearredeye/eslint-config/src/typescript.js",
   "parserOptions": {
     "sourceType": "module"
+  },
+  "rules": {
+    "no-var": "off"
   }
+
 }
