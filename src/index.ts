@@ -45,5 +45,5 @@ function renderExperiment(experiment: Experiment): DocumentFragment {
 }
 
 window.onload = function (): void {
-  document.body.appendChild(renderExperiment(getExperiment(501) as Experiment));
+  //document.body.appendChild(renderExperiment(getExperiment(501) as Experiment));
 };
